@@ -1,0 +1,22 @@
+.delete {
+  color: #b02337;
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 12px;
+
+  button {
+    margin-left: 10px;
+  }
+}
+
+.row-controls {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+}

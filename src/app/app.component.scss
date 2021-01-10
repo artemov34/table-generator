@@ -1,0 +1,20 @@
+.form {
+  &-one {
+    max-width: 280px;
+  }
+
+  &-two {
+    max-width: 575px;
+  }
+}
+
+app-row-add {
+  margin-bottom: 20px;
+}
+
+app-table {
+  margin-top: 20px;
+  display: block;
+  max-width: 595px;
+  width: 100%;
+}

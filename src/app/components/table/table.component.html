@@ -1,0 +1,35 @@
+<div class="controls">
+  <button (click)="copyTabel()" class="button primary small" *ngIf="canCopy && rows.length">copy table</button>
+  <button (click)="removed.emit()" class="button link icon-delete" *ngIf="canRemove && rows.length"></button>
+</div>
+
+<table class="table">
+  <thead>
+    <td>Name</td>
+    <td>Surname</td>
+    <td>Age</td>
+    <td>City</td>
+    <td></td>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of rows; let i = index">
+      <td>{{ row?.name }}</td>
+      <td>{{ row?.surname }}</td>
+      <td>{{ row?.age }}</td>
+      <td>{{ row?.city }}</td>
+      <td class="row-controls">
+        <button (click)="editRow(i, row)" class="button link">Edit</button>
+        <button (click)="removeRow(i)" class="button link delete">Delete</button>
+      </td>
+    </tr>
+    <tr *ngFor="let item of emptyRows">
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<app-modal [item]="editItem" [show]="showModal" (resolve)="editResolve($event)"></app-modal>

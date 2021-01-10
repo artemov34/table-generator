@@ -1,0 +1,6 @@
+<app-row-add (resolve)="addRow.next($event)" (change)="addFormChange($event)" class="form-one"></app-row-add>
+<app-row-add (resolve)="addRow.next($event)" [value]="addFromState" class="form-two"></app-row-add>
+
+<app-table [add]="addRow" [canCopy]="true" (copy)="copyTable($event)"></app-table>
+
+<app-table *ngFor="let table of tables; let i = index" [canRemove]="true" (removed)="removeTable(i)" [rows]="table.rows"></app-table>

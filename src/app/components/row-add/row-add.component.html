@@ -1,0 +1,22 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="form">
+  <div class="fields">
+    <div class="field">
+      <input type="text" class="input" placeholder="Name" formControlName="name">
+      <p *ngIf="form.controls.name.hasError('required') && form.controls.name.dirty" class="error">Field is required.</p>
+    </div>
+
+    <div class="field">
+      <input type="text" class="input" placeholder="Surname" formControlName="surname">
+      <p *ngIf="form.controls.surname.hasError('required') && form.controls.name.dirty" class="error">Field is required.</p>
+    </div>
+    <div class="field">
+      <input type="text" class="input" placeholder="Age" formControlName="age">
+      <p *ngIf="form.controls.age.hasError('required') && form.controls.name.dirty" class="error">Field is required.</p>
+    </div>
+    <div class="field">
+      <input type="text" class="input" placeholder="City" formControlName="city">
+      <p *ngIf="form.controls.city.hasError('required') && form.controls.name.dirty" class="error">Field is required.</p>
+    </div>
+  </div>
+  <button type="submit" class="button primary">ADD</button>
+</form>

@@ -1,0 +1,41 @@
+:host {
+  box-shadow: 2px 2px 2px #ccc;
+  background: #fff;
+  display: inline-block;
+  padding: 20px;
+  margin: 10px;
+}
+
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.fields {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+}
+
+.field {
+  width: 100%;
+  max-width: 245px;
+  margin-bottom: 20px;
+}
+
+.button {
+  width: 100%;
+  max-width: 245px;
+  font-weight: bold;
+  display: block;
+}
+
+.error {
+  margin-bottom: 0;
+}

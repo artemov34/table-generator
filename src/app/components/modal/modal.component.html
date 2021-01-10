@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="title">
+    <span>{{ title }}</span>
+    <button class="button link icon-close" (click)="show = false; resolve.emit()"></button>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="submit()" class="content">
+    <div class="fields">
+      <div class="field">
+        <input type="text" class="input" placeholder="Name" formControlName="name">
+        <p *ngIf="form.controls.name.hasError('required') && form.controls.name.dirty" class="error">Field is required.</p>
+      </div>
+      <div class="field">
+        <input type="text" class="input" placeholder="Surname" formControlName="surname">
+        <p *ngIf="form.controls.surname.hasError('required') && form.controls.name.dirty" class="error">Field is required.</p>
+      </div>
+      <div class="field">
+        <input type="text" class="input" placeholder="City" formControlName="city">
+        <p *ngIf="form.controls.city.hasError('required') && form.controls.name.dirty" class="error">Field is required.</p>
+      </div>
+    </div>
+
+    <div class="controls">
+      <label class="checkbox">
+        <span class="checkbox__input">
+          <input type="checkbox" formControlName="agree">
+          <span class="checkbox__control">
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden="true" focusable="false">
+              <path fill='none' stroke='#393939' stroke-width='3' d='M1.73 12.91l6.37 6.37L22.79 4.59' /></svg>
+          </span>
+        </span>
+        <span class="radio__label">Totally agree</span>
+      </label>
+
+      <button type="submit" class="button primary" [disabled]="!form.valid">SAVE</button>
+    </div>
+  </form>
+</div>
